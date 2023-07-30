@@ -18,11 +18,12 @@
           [disabled] it value is true 
           when title = null it return false we must add ! to make it true 
           to make [disabled] use 
-        
+          
         -->
         <button [disabled]="!title" (click)="rmHandleClickButton()" class="btn btn-outline-warning m-1 mt-2">Removal Random</button>
       </div>
-
+      
+      <button *ngIf="!title" (click)="resetButton()" class="btn btn-danger">Reset Board</button>
       <div class="mt-4 d-flex flex-row">
         <div class="m-2">
           <div *ngFor="let msg of captionList" >{{msg.message}}</div>

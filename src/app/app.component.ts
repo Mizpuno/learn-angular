@@ -85,6 +85,11 @@ export class AppComponent {
     this.count++
   }
 
+  resetButton () {
+    this.usedCaptionList = []
+    this.title = this.nmRandomCaption()
+  }
+
   getRandom(max: number) {
     return Math.floor(Math.random() * max)
   }
