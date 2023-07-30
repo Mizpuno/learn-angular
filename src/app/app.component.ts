@@ -14,20 +14,21 @@ export class AppComponent {
     {
       id: 1,
       message: "ถ้าที่ตรงนั้น ไม่ใช่ที่ของเรา เราจะไม่มีโฉนด 🤣",
-      icon: './assets/angular.png'
+      icon: './assets/icons/ic_funny_02.png'
     },
     {
       id: 2,
       message: "เขามันทรงดี  ส่วนเราทรงตัวได้ก็บุญแล้ว",
-      icon: './assets/angular.png'
+      icon: './assets/icons/ic_funny_03.png'
     },
     {
       id: 3,
-      message: "โตมาถึงได้รู้ว่า โลกไม่ได้สวยเหมือนเรา 😹t",
-      icon: './assets/angular.png'
+      message: "โตมาถึงได้รู้ว่า โลกไม่ได้สวยเหมือนเรา 😹",
+      icon: './assets/icons/ic_funny_04.png'
     },
   ]
   usedCaptionList: CaptionItem[] = []
+
 
   //type inference
   // messages = [
@@ -45,6 +46,8 @@ export class AppComponent {
     do {
       var randomIndex = this.getRandom(this.captionList.length)
     } while (this.title == this.captionList[randomIndex].message)
+
+    this.imgSrc = this.captionList[randomIndex].icon
     return this.captionList[randomIndex].message
 
     // let tmp = this.captionList
@@ -67,6 +70,7 @@ export class AppComponent {
     } while (this.usedCaptionList.includes(usedCaption))
     
     this.usedCaptionList.push(usedCaption)
+    this.imgSrc = usedCaption.icon
     return usedCaption.message
   }
 
